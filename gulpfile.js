@@ -10,7 +10,7 @@ sass.compiler = require('node-sass');
 
 // Styles ---------------------------------------------------------
 var  styles = {
-    src: 'src/assets/css/scss/**/*.scss',
+    src: 'src/assets/css/**/*.scss',
     dest: 'src/assets/css',
     filename: 'style.min.css'
 }
