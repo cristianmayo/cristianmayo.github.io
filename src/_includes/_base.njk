@@ -5,13 +5,13 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html lang="en">
     <head>
-        <title>GitHub Page</title>
+        <title>{{ title }}</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="Cristian Mayo's GitHub Page which contains github projects and repositories along with relative details and activities">
+        <meta name="description" content="{{ profile.name }}'s GitHub Page which contains github projects and repositories along with relative details and activities">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/da24d161f6.js" crossorigin="anonymous"></script>
-        <script type="module" async>import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad:true}));</script>
+        {% mermaid_js %}
         <link rel="icon" href="/assets/img/github-alt.svg">
         <link rel="stylesheet" href="/assets/css/style.min.css">
     </head>
@@ -29,54 +29,23 @@
                 <a class="base-header__brand" href="/">
                     <img class="brand-logo" src="/assets/img/profile-picture.jpeg" alt="Logo Thumbnail">
                     <div>
-                        <p class="brand-title">Cristian Mayo</p>
-                        <small class="brand-subtitle">@cristianmayo</small>
+                        <p class="brand-title">{{ profile.name }}</p>
+                        <small class="brand-subtitle">@{{ profile.githubUsername }}</small>
                     </div>
                 </a>
                 <div class="base-header__default-nav">
-                    <nav class="base-nav__horizontal">
-    <ul class="base-nav__horizontal-menu">
-        <li class="base-nav__horizontal-menu-link">
-            <a href="/">GitHub Page</a>
-        </li>
-        <li class="divider">|</li>
-        <li class="base-nav__horizontal-menu-link">
-            <a href="/projects">Projects</a>
-        </li>
-        <li class="divider">|</li>
-        <li class="base-nav__horizontal-menu-link">
-            <a href="/repositories">Repositories</a>
-        </li>
-    </ul>
-</nav>
+                    {% include '_base-nav.njk' %}
                 </div>
             </div>
         </header>
-        <main class="base-content">
-<div class="container">
-    <h3>This GitHub Page is still Under Construction</h3>
-</div></main>
+        <main class="base-content">{{ content | safe }}</main>
         <footer class="base-footer">
             <section class="container base-footer__container">
                 <small class="footnote">
-                    <span>&copy; 2023 - Developed by</span>
-                    <a href="https://github.com/cristianmayo" target="_blank">Cristian Mayo</a>
+                    <span>&copy; {% currentYear %} - Developed by</span>
+                    <a href="https://github.com/{{ profile.githubUsername }}" target="_blank">{{ profile.name }}</a>
                 </small>
-                <nav class="base-nav__horizontal">
-    <ul class="base-nav__horizontal-menu">
-        <li class="base-nav__horizontal-menu-link">
-            <a href="/">GitHub Page</a>
-        </li>
-        <li class="divider">|</li>
-        <li class="base-nav__horizontal-menu-link">
-            <a href="/projects">Projects</a>
-        </li>
-        <li class="divider">|</li>
-        <li class="base-nav__horizontal-menu-link">
-            <a href="/repositories">Repositories</a>
-        </li>
-    </ul>
-</nav>
+                {% include '_base-nav.njk' %}
             </section>
         </footer>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="

@@ -1,0 +1,42 @@
+:root {
+    --bg-primary: #ff4500;
+    --bg-secondary: #ff6e02;
+    --bg-dark: #212529;
+    --bg-dimgray: dimgray;
+    --bg-slategray: #2c3238;
+    --bg-lightgray: #c0c0c0;
+    --bg-light: #dfdfdf;
+
+    --device-width-lg: 1440px;
+    --device-width-md: 768px;
+    --device-width-sm: 425px;
+
+    --half-spacing: 0.5rem;
+    --default-spacing: 1rem;
+    --two-spacing: 2rem;
+    --three-spacing: 3rem;
+    --five-spacing: 5rem;
+
+    --text-lineheight: 1.75rem;
+
+    --text-size-sm: 0.85rem;
+    --text-size-normal: 1rem;
+    --text-size-md: 1.2rem;
+    --text-size-lg: 1.5rem;
+    --text-size-xl: 1.8rem;
+
+    --text-primary: #ff6e02;
+    --text-muted: #333333;
+    --text-dark: #212529;
+    --text-dimgray: #696969;
+    --text-slategray: #2c3238;
+    --text-lightgray: #c0c0c0;
+    --text-light: #dfdfdf;
+
+    --font-body: 'Montserrat', Verdana;
+    --font-title: 'Saira', 'Segoe UI';
+
+    --shadow-dark-bg: #0000002d;
+    --shadow-dark-bottom: 0 2rem 3rem var(--shadow-dark-bg);
+    --shadow-dark-top: 0 -2rem 3rem var(--shadow-dark-bg);
+}
