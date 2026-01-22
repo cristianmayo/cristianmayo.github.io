@@ -1,9 +1,20 @@
 ---
 title: GitHub Repositories
+layout: _base.njk
 ---
 
-{% include "contents/under-construction.njk" %}
-{#
-<div class="container">
-    {% include "contents/repository-ltf-cards.njk" %}
-</div> #}
+<div class="container repositories-page">
+    <header class="repositories-page__header">
+        <h1>GitHub Repositories</h1>
+        <p>A collection of my public repositories from GitHub, automatically updated.</p>
+    </header>
+    
+    {% if githubRepositories.length > 0 %}
+        {% include "contents/repository-ltf-cards.njk" %}
+    {% else %}
+        <div class="repositories-page__empty">
+            <p>No repositories found or unable to fetch from GitHub.</p>
+            <p>Please check your internet connection and try again.</p>
+        </div>
+    {% endif %}
+</div>

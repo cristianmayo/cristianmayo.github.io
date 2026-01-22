@@ -1,0 +1,86 @@
+---
+title: Blog
+layout: _base.njk
+pagination:
+    data: collections.blogPosts
+    size: 10
+    alias: posts
+eleventyExcludeFromCollections: true
+tags: []
+eleventyComputed:
+    permalink: "/blog/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+---
+
+<div class="container blog-index">
+    <header class="blog-index__header">
+        <h1 class="blog-index__title">Blog</h1>
+        <p class="blog-index__description">Thoughts, tutorials, and insights on web development and technology.</p>
+    </header>
+
+    <div class="blog-index__posts">
+        {% for post in posts %}
+        <article class="blog-card">
+            <header class="blog-card__header">
+                <h2 class="blog-card__title">
+                    <a href="{{ post.url }}">{{ post.data.title }}</a>
+                </h2>
+                <div class="blog-card__meta">
+                    <time class="blog-card__date" datetime="{{ post.date }}">
+                        <i class="fas fa-calendar"></i> {{ post.date | localeDate }}
+                    </time>
+                    {% if post.data.category %}
+                    <span class="blog-card__category">
+                        <i class="fas fa-folder"></i> {{ post.data.category }}
+                    </span>
+                    {% endif %}
+                </div>
+            </header>
+
+            {% if post.data.tags %}
+            <div class="blog-card__tags">
+                {% for tag in post.data.tags %}
+                {% if tag != "posts" %}
+                <span class="blog-card__tag">{{ tag }}</span>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if post.data.excerpt %}
+            <div class="blog-card__excerpt">
+                <p>{{ post.data.excerpt }}</p>
+            </div>
+            {% else %}
+            <div class="blog-card__excerpt">
+                <p>{{ post.templateContent | excerpt }}</p>
+            </div>
+            {% endif %}
+
+            <a href="{{ post.url }}" class="blog-card__read-more">
+                Read More <i class="fas fa-arrow-right"></i>
+            </a>
+        </article>
+        {% endfor %}
+    </div>
+
+    {% if pagination.href.previous or pagination.href.next %}
+    <nav class="blog-pagination">
+        {% if pagination.href.previous %}
+        <a href="{{ pagination.href.previous }}" class="blog-pagination__link blog-pagination__prev">
+            <i class="fas fa-chevron-left"></i> Previous
+        </a>
+        {% endif %}
+        
+        <span class="blog-pagination__info">
+            Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}
+        </span>
+
+        {% if pagination.href.next %}
+        <a href="{{ pagination.href.next }}" class="blog-pagination__link blog-pagination__next">
+            Next <i class="fas fa-chevron-right"></i>
+        </a>
+        {% endif %}
+    </nav>
+    {% endif %}
+</div>
+

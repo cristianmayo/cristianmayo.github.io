@@ -7,12 +7,42 @@
                 <h3 class="ltf-card__title">{{ repository.name }}</h3>
             </header>
             <p class="ltf-card__description">{{ repository.description }}</p>
+            {% if repository.language or repository.stars or repository.forks %}
+            <div class="ltf-card__stats">
+                {% if repository.language %}
+                <span class="ltf-card__stat">
+                    <i class="fas fa-code"></i> {{ repository.language }}
+                </span>
+                {% endif %}
+                {% if repository.stars > 0 %}
+                <span class="ltf-card__stat">
+                    <i class="fas fa-star"></i> {{ repository.stars }}
+                </span>
+                {% endif %}
+                {% if repository.forks > 0 %}
+                <span class="ltf-card__stat">
+                    <i class="fas fa-code-branch"></i> {{ repository.forks }}
+                </span>
+                {% endif %}
+            </div>
+            {% endif %}
+            {% if repository.topics and repository.topics.length > 0 %}
+            <div class="ltf-card__topics">
+                {% for topic in repository.topics | take(5) %}
+                <span class="ltf-card__topic">{{ topic }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
             <footer>
-                <a href="{{ repository.name | slugify }}">Documentation</a>
+                <a href="{{ repository.link }}" target="_blank">View Repository</a>
+                {% if repository.homepage %}
                 <span class="divider"> | </span>
-                <a href="{{ repository.link }}" target="_blank">Repository</a>
+                <a href="{{ repository.homepage }}" target="_blank">Homepage</a>
+                {% endif %}
+                {% if repository.isArchived %}
                 <span class="divider"> | </span>
-                <span class="ltf-card__status">{{ repository.status }}</span>
+                <span class="ltf-card__status ltf-card__status--archived">Archived</span>
+                {% endif %}
             </footer>
         </article>
     {% endfor %}

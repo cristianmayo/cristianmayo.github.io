@@ -4,6 +4,8 @@
   "description": "Fullstack-dev Technology",
   "main": "src/index.njk",
   "scripts": {
+    "clean": "node -e \"const fs = require('fs'); const path = require('path'); const dir = 'docs'; if (fs.existsSync(dir)) { fs.rmSync(dir, { recursive: true, force: true }); console.log('Cleaned docs directory'); }\"",
+    "prebuild": "npm run clean",
     "start": "eleventy --serve",
     "build": "eleventy",
     "dev": "concurrently --kill-others \"npm run start\" \"npx gulp watch\""
@@ -26,6 +28,7 @@
   "homepage": "https://github.com/cristianmayo/fdtechdotnet#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@babel/core": "^7.18.5",
     "@kevingimbel/eleventy-plugin-mermaid": "^2.1.0",
@@ -42,7 +45,6 @@
     "luxon": "^2.3.1",
     "markdown-it-anchor": "^8.6.7",
     "mermaid": "^10.1.0",
-    "node-sass": "^8.0.0",
     "sass": "^1.57.1",
     "slugify": "^1.6.6"
   },

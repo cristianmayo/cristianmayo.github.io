@@ -7,9 +7,9 @@ const pluginTOC = require('eleventy-plugin-toc');
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 
 module.exports = function(config) {
-    config.setUseGitIgnore(true);
+config.setUseGitIgnore(true);
 
-    //#region >> Passthrough ========================
+//#region >> Passthrough ========================
     config.addPassthroughCopy("./src/assets/css/**/*.min.css");
     config.addPassthroughCopy("./src/assets/img/**/*");
     //#endregion
@@ -47,6 +47,12 @@ module.exports = function(config) {
         return content.substr(0, content.lastIndexOf(" ", 250)) + "...";
     });
 
+    config.addFilter("truncate", (str, length = 100) => {
+        if (!str) { return ""; }
+        if (str.length <= length) { return str; }
+        return str.substr(0, str.lastIndexOf(" ", length)) + "...";
+    });
+
     config.addFilter("slugify", (str) => {
         if (!str) { return; }
 
@@ -58,6 +64,7 @@ module.exports = function(config) {
     });
 
     config.addNunjucksFilter("sortedCollection", (collection) => collection.sort());
+
     //#endregion
 
     //#region >> Articles Config ========================
@@ -76,6 +83,40 @@ module.exports = function(config) {
             .toPairs()
             .reverse()
             .value();
+    });
+    //#endregion
+
+    //#region >> Blog Config ========================
+    // Custom permalink for blog posts based on filename
+    config.addCollection("blogPosts", (collection) => {
+        return collection.getFilteredByGlob("./src/blog/**/*.md")
+            .filter(post => !post.data.draft)
+            .sort((a, b) => {
+                // Sort by date descending (newest first)
+                const dateA = new Date(a.date);
+                const dateB = new Date(b.date);
+                return dateB - dateA;
+            });
+    });
+
+
+    // Extract date parts from filename for permalink
+    config.addFilter("extractDateFromFilename", (filename) => {
+        const match = filename.match(/(\d{4})(\d{2})(\d{2})_/);
+        if (match) {
+            return {
+                year: match[1],
+                month: match[2],
+                day: match[3]
+            };
+        }
+        return null;
+    });
+
+    // Extract slug from filename
+    config.addFilter("extractSlugFromFilename", (filename) => {
+        const match = filename.match(/\d{8}_(.*?)\.md$/);
+        return match ? match[1] : filename;
     });
     //#endregion
 
@@ -103,11 +144,29 @@ module.exports = function(config) {
         flat: false
     });
 
-    config.addPlugin(pluginMermaid);
+    // Mermaid plugin configuration with dark theme
+    config.addPlugin(pluginMermaid, {
+        mermaid_config: {
+            theme: 'dark',
+            themeVariables: {
+                primaryColor: '#ff6e02',
+                primaryTextColor: '#dfdfdf',
+                primaryBorderColor: '#ff4500',
+                lineColor: '#ff6e02',
+                secondaryColor: '#2c3238',
+                tertiaryColor: '#212529',
+                background: '#2c3238',
+                mainBkg: '#2c3238',
+                textColor: '#dfdfdf',
+                fontSize: '16px'
+            }
+        }
+    });
 
     return {
         dir: {
             input: "src",
+
             output: "docs"
         }
     };

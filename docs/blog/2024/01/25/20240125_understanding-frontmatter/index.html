@@ -5,7 +5,7 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html lang="en">
     <head>
-        <title>GitHub Repositories</title>
+        <title>Understanding Frontmatter in Static Sites</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="Cristian Mayo's GitHub Page which contains github projects and repositories along with relative details and activities">
@@ -55,64 +55,88 @@
             </div>
         </header>
         <main class="base-content">
-<div class="container repositories-page">
-    <header class="repositories-page__header">
-        <h1>GitHub Repositories</h1>
-        <p>A collection of my public repositories from GitHub, automatically updated.</p>
+<article class="container blog-post">
+    <header class="blog-post__header">
+        <h1 class="blog-post__title">Understanding Frontmatter in Static Sites</h1>
+        <div class="blog-post__meta">
+            <time class="blog-post__date" datetime="Thu Jan 25 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
+                Thursday, January 25, 2024
+            </time>
+            
+            <span class="blog-post__category">
+                <i class="fas fa-folder"></i> Web Development
+            </span>
+            
+        </div>
+        
+        <div class="blog-post__tags">
+            
+            
+            
+            
+            
+            
+            <span class="blog-post__tag">
+                <i class="fas fa-tag"></i> frontmatter
+            </span>
+            
+            
+            
+            <span class="blog-post__tag">
+                <i class="fas fa-tag"></i> markdown
+            </span>
+            
+            
+            
+            <span class="blog-post__tag">
+                <i class="fas fa-tag"></i> yaml
+            </span>
+            
+            
+        </div>
+        
     </header>
     
-    
-        <section class="repository-ltf-cards">
-    <div class="repository-ltf-cards__container">
-    
-        <article class="ltf-card">
-            <header>
-                <i class="fa-brands fa-github fa-2x"></i>
-                <h3 class="ltf-card__title">cristianmayo.github.io</h3>
-            </header>
-            <p class="ltf-card__description">Static site generator for GitHub Profile using Eleventy (11ty), Nunjucks, FrontMatter, and Markdown.</p>
-            
-            <div class="ltf-card__stats">
-                
-                <span class="ltf-card__stat">
-                    <i class="fas fa-code"></i> SCSS
-                </span>
-                
-                
-                
-            </div>
-            
-            
-            <footer>
-                <a href="https://github.com/cristianmayo/cristianmayo.github.io" target="_blank">View Repository</a>
-                
-                <span class="divider"> | </span>
-                <a href="https://cristianmayo.github.io/" target="_blank">Homepage</a>
-                
-                
-            </footer>
-        </article>
-    
-        <article class="ltf-card">
-            <header>
-                <i class="fa-brands fa-github fa-2x"></i>
-                <h3 class="ltf-card__title">cristianmayo</h3>
-            </header>
-            <p class="ltf-card__description">No description provided</p>
-            
-            
-            <footer>
-                <a href="https://github.com/cristianmayo/cristianmayo" target="_blank">View Repository</a>
-                
-                
-            </footer>
-        </article>
-    
-    </div>
-</section>
+    <div class="blog-post__content">
+        <h1 id="understanding-frontmatter" tabindex="-1">Understanding Frontmatter</h1>
+<p>Frontmatter is a powerful feature that allows you to add metadata to your markdown files. It's written in YAML and sits at the top of your file between triple dashes.</p>
+<h2 id="basic-structure" tabindex="-1">Basic Structure</h2>
+<pre class="yaml">---
+title: Your Title
+date: 2024-01-25
+tags: [tag1, tag2]
+---
+</a>
+<h2 id="common-fields" tabindex="-1">Common Fields</h2>
+<h3 id="title" tabindex="-1">Title</h3>
+<p>The title of your post that appears in headings and metadata.</p>
+<h3 id="date" tabindex="-1">Date</h3>
+<p>The publication date, used for sorting and permalink generation.</p>
+<h3 id="category" tabindex="-1">Category</h3>
+<p>Group your posts by topic or subject matter.</p>
+<h3 id="tags" tabindex="-1">Tags</h3>
+<p>Add multiple tags to make content discoverable.</p>
+<h3 id="excerpt" tabindex="-1">Excerpt</h3>
+<p>A short description shown on listing pages.</p>
+<h2 id="advanced-usage" tabindex="-1">Advanced Usage</h2>
+<p>You can also add custom fields:</p>
+<pre class="yaml">---
+author: John Doe
+featured: true
+image: /img/post-image.jpg
+---
+</a>
+<p>These fields become available in your templates for conditional rendering and styling.</p>
 
-    
-</div>
+    </div>
+
+    <footer class="blog-post__footer">
+        <a href="/blog" class="blog-post__back-link">
+            <i class="fas fa-arrow-left"></i> Back to Blog
+        </a>
+    </footer>
+</article>
+
 </main>
         <footer class="base-footer">
             <section class="container base-footer__container">

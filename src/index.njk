@@ -1,5 +1,139 @@
 ---
-title: GitHub Page
+title: Home
+layout: _base.njk
 ---
 
-{% include "contents/under-construction.njk" %}
+<div class="container home-page">
+    <div class="home-page__layout">
+        <!-- Main Column: Recent Blog Posts (3/4 width) -->
+        <section class="home-page__main">
+            <header class="section-header">
+                <h2>Recent Blog Posts</h2>
+                <a href="/blog" class="section-header__link">View All <i class="fas fa-arrow-right"></i></a>
+            </header>
+
+            {% set recentPosts = collections.blogPosts | take(4) %}
+            
+            {% if recentPosts.length > 0 %}
+            <div class="blog-featured">
+                {% set featuredPost = recentPosts[0] %}
+                <article class="blog-featured__card">
+                    <header class="blog-featured__header">
+                        <h3 class="blog-featured__title">
+                            <a href="{{ featuredPost.url }}">{{ featuredPost.data.title }}</a>
+                        </h3>
+                        <div class="blog-featured__meta">
+                            <time datetime="{{ featuredPost.date }}">
+                                <i class="fas fa-calendar"></i> {{ featuredPost.date | localeDate }}
+                            </time>
+                            {% if featuredPost.data.category %}
+                            <span class="blog-featured__category">
+                                <i class="fas fa-folder"></i> {{ featuredPost.data.category }}
+                            </span>
+                            {% endif %}
+                        </div>
+                    </header>
+                    
+                    {% if featuredPost.data.tags %}
+                    <div class="blog-featured__tags">
+                        {% for tag in featuredPost.data.tags %}
+                        {% if tag != "posts" %}
+                        <span class="blog-featured__tag">{{ tag }}</span>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    
+                    <div class="blog-featured__excerpt">
+                        {% if featuredPost.data.excerpt %}
+                        <p>{{ featuredPost.data.excerpt }}</p>
+                        {% else %}
+                        <p>{{ featuredPost.templateContent | excerpt }}</p>
+                        {% endif %}
+                    </div>
+                    
+                    <a href="{{ featuredPost.url }}" class="blog-featured__read-more">
+                        Read Full Article <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+            </div>
+            {% endif %}
+
+            {% if recentPosts.length > 1 %}
+            <div class="blog-grid">
+                {% for post in recentPosts %}
+                {% if loop.index > 1 %}
+                <article class="blog-grid__card">
+                    <header class="blog-grid__header">
+                        <h4 class="blog-grid__title">
+                            <a href="{{ post.url }}">{{ post.data.title }}</a>
+                        </h4>
+                        <time class="blog-grid__date" datetime="{{ post.date }}">
+                            <i class="fas fa-calendar"></i> {{ post.date | localeDate }}
+                        </time>
+                    </header>
+                    
+                    <div class="blog-grid__excerpt">
+                        {% if post.data.excerpt %}
+                        <p>{{ post.data.excerpt }}</p>
+                        {% else %}
+                        <p>{{ post.templateContent | excerpt }}</p>
+                        {% endif %}
+                    </div>
+                    
+                    <a href="{{ post.url }}" class="blog-grid__read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+        </section>
+
+        <!-- Sidebar Column: Recent Repositories (1/4 width) -->
+        <aside class="home-page__sidebar">
+            <header class="section-header">
+                <h2>Recent Repositories</h2>
+                <a href="/repositories" class="section-header__link">View All <i class="fas fa-arrow-right"></i></a>
+            </header>
+
+            {% set recentRepos = githubRepositories | take(5) %}
+            
+            {% if recentRepos.length > 0 %}
+            <div class="repo-list">
+                {% for repo in recentRepos %}
+                <article class="repo-list__item">
+                    <header class="repo-list__header">
+                        <h4 class="repo-list__title">
+                            <a href="{{ repo.link }}" target="_blank">
+                                <i class="fa-brands fa-github"></i> {{ repo.name }}
+                            </a>
+                        </h4>
+                    </header>
+                    
+                    <p class="repo-list__description">{{ repo.description | truncate(80) }}</p>
+                    
+                    {% if repo.language or repo.stars %}
+                    <div class="repo-list__meta">
+                        {% if repo.language %}
+                        <span class="repo-list__language">
+                            <i class="fas fa-code"></i> {{ repo.language }}
+                        </span>
+                        {% endif %}
+                        {% if repo.stars > 0 %}
+                        <span class="repo-list__stars">
+                            <i class="fas fa-star"></i> {{ repo.stars }}
+                        </span>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </article>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="home-page__empty">No repositories found.</p>
+            {% endif %}
+        </aside>
+    </div>
+</div>

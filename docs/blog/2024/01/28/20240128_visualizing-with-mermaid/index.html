@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="en">
+    <head>
+        <title>Visualizing Ideas with Mermaid Diagrams</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Cristian Mayo's GitHub Page which contains github projects and repositories along with relative details and activities">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/da24d161f6.js" crossorigin="anonymous"></script>
+        <script type="module" async>import mermaid from "https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs";document.addEventListener('DOMContentLoaded', mermaid.initialize({startOnLoad:true}));</script>
+        <link rel="icon" href="/assets/img/github-alt.svg">
+        <link rel="stylesheet" href="/assets/css/style.min.css">
+    </head>
+    <body>
+       <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M489ZSBR"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <!-- End Google Tag Manager (noscript) -->
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <header class="base-header">
+            <div class="container base-header__container">
+                <a class="base-header__brand" href="/">
+                    <img class="brand-logo" src="/assets/img/profile-picture.jpeg" alt="Logo Thumbnail">
+                    <div>
+                        <p class="brand-title">Cristian Mayo</p>
+                        <small class="brand-subtitle">@cristianmayo</small>
+                    </div>
+                </a>
+                <div class="base-header__default-nav">
+                    <nav class="base-nav__horizontal">
+    <ul class="base-nav__horizontal-menu">
+        <li class="base-nav__horizontal-menu-link">
+            <a href="/">Home</a>
+        </li>
+        <li class="divider">|</li>
+        <li class="base-nav__horizontal-menu-link">
+            <a href="/blog">Blog</a>
+        </li>
+        <li class="divider">|</li>
+        <li class="base-nav__horizontal-menu-link">
+            <a href="/repositories">Repositories</a>
+        </li>
+    </ul>
+</nav>
+
+
+                </div>
+            </div>
+        </header>
+        <main class="base-content">
+<article class="container blog-post">
+    <header class="blog-post__header">
+        <h1 class="blog-post__title">Visualizing Ideas with Mermaid Diagrams</h1>
+        <div class="blog-post__meta">
+            <time class="blog-post__date" datetime="Sun Jan 28 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
+                Sunday, January 28, 2024
+            </time>
+            
+            <span class="blog-post__category">
+                <i class="fas fa-folder"></i> Tutorial
+            </span>
+            
+        </div>
+        
+        <div class="blog-post__tags">
+            
+            
+            
+            
+            <span class="blog-post__tag">
+                <i class="fas fa-tag"></i> mermaid
+            </span>
+            
+            
+            
+            <span class="blog-post__tag">
+                <i class="fas fa-tag"></i> diagrams
+            </span>
+            
+            
+            
+            <span class="blog-post__tag">
+                <i class="fas fa-tag"></i> visualization
+            </span>
+            
+            
+            
+            <span class="blog-post__tag">
+                <i class="fas fa-tag"></i> markdown
+            </span>
+            
+            
+        </div>
+        
+    </header>
+    
+    <div class="blog-post__content">
+        <h1 id="visualizing-ideas-with-mermaid-diagrams" tabindex="-1">Visualizing Ideas with Mermaid Diagrams</h1>
+<p>Mermaid is a powerful tool that lets you create diagrams and visualizations using simple text descriptions. This blog supports Mermaid natively, allowing you to include various types of diagrams directly in your markdown content.</p>
+<h2 id="what-is-mermaid" tabindex="-1">What is Mermaid?</h2>
+<p>Mermaid is a JavaScript-based diagramming and charting tool that renders Markdown-inspired text definitions to create and modify diagrams dynamically. It's perfect for:</p>
+<ul>
+<li>Flowcharts</li>
+<li>Sequence diagrams</li>
+<li>Gantt charts</li>
+<li>Class diagrams</li>
+<li>State diagrams</li>
+<li>And much more!</li>
+</ul>
+<h2 id="flowchart-example" tabindex="-1">Flowchart Example</h2>
+<p>Here's a simple flowchart showing a decision-making process:</p>
+<pre class="mermaid">graph TD&#10;    A[Start] --&gt; B{Is it working?}&#10;    B --&gt;|Yes| C[Great!]&#10;    B --&gt;|No| D[Debug it]&#10;    D --&gt; E[Fix the bug]&#10;    E --&gt; B&#10;    C --&gt; F[End]&#10;</pre>
+<h2 id="sequence-diagram" tabindex="-1">Sequence Diagram</h2>
+<p>Sequence diagrams are great for showing interactions between different components:</p>
+<pre class="mermaid">sequenceDiagram&#10;    participant User&#10;    participant Browser&#10;    participant Server&#10;    participant Database&#10;    &#10;    User-&gt;&gt;Browser: Click &quot;Submit&quot;&#10;    Browser-&gt;&gt;Server: POST /api/data&#10;    Server-&gt;&gt;Database: INSERT query&#10;    Database--&gt;&gt;Server: Success&#10;    Server--&gt;&gt;Browser: 200 OK&#10;    Browser--&gt;&gt;User: Show success message&#10;</pre>
+<h2 id="gantt-chart" tabindex="-1">Gantt Chart</h2>
+<p>Perfect for project planning and timelines:</p>
+<pre class="mermaid">gantt&#10;    title Project Timeline&#10;    dateFormat  YYYY-MM-DD&#10;    section Planning&#10;    Requirements gathering :a1, 2024-01-01, 7d&#10;    Design mockups         :a2, after a1, 5d&#10;    section Development&#10;    Setup environment      :b1, after a2, 2d&#10;    Build features         :b2, after b1, 14d&#10;    Testing               :b3, after b2, 7d&#10;    section Deployment&#10;    Deploy to staging     :c1, after b3, 2d&#10;    Production release    :c2, after c1, 1d&#10;</pre>
+<h2 id="class-diagram" tabindex="-1">Class Diagram</h2>
+<p>Great for documenting object-oriented designs:</p>
+<pre class="mermaid">classDiagram&#10;    class BlogPost {&#10;        +String title&#10;        +Date date&#10;        +String category&#10;        +Array tags&#10;        +String content&#10;        +publish()&#10;        +edit()&#10;        +delete()&#10;    }&#10;    &#10;    class Author {&#10;        +String name&#10;        +String email&#10;        +writeBlogPost()&#10;    }&#10;    &#10;    class Comment {&#10;        +String text&#10;        +Date timestamp&#10;        +approve()&#10;    }&#10;    &#10;    Author &quot;1&quot; --&gt; &quot;*&quot; BlogPost : writes&#10;    BlogPost &quot;1&quot; --&gt; &quot;*&quot; Comment : has&#10;</pre>
+<h2 id="state-diagram" tabindex="-1">State Diagram</h2>
+<p>Useful for showing state transitions:</p>
+<pre class="mermaid">stateDiagram-v2&#10;    [*] --&gt; Draft&#10;    Draft --&gt; Review : Submit&#10;    Review --&gt; Published : Approve&#10;    Review --&gt; Draft : Request Changes&#10;    Published --&gt; Archived : Archive&#10;    Archived --&gt; [*]&#10;</pre>
+<h2 id="entity-relationship-diagram" tabindex="-1">Entity Relationship Diagram</h2>
+<p>Perfect for database design:</p>
+<pre class="mermaid">erDiagram&#10;    AUTHOR ||--o{ BLOG_POST : writes&#10;    BLOG_POST ||--o{ COMMENT : has&#10;    BLOG_POST }o--|| CATEGORY : belongs_to&#10;    BLOG_POST }o--o{ TAG : has&#10;    &#10;    AUTHOR {&#10;        int id PK&#10;        string name&#10;        string email&#10;    }&#10;    &#10;    BLOG_POST {&#10;        int id PK&#10;        string title&#10;        date published_date&#10;        text content&#10;        int author_id FK&#10;        int category_id FK&#10;    }&#10;    &#10;    COMMENT {&#10;        int id PK&#10;        text content&#10;        date created_at&#10;        int post_id FK&#10;    }&#10;    &#10;    CATEGORY {&#10;        int id PK&#10;        string name&#10;    }&#10;    &#10;    TAG {&#10;        int id PK&#10;        string name&#10;    }&#10;</pre>
+<h2 id="pie-chart" tabindex="-1">Pie Chart</h2>
+<p>For showing data distributions:</p>
+<pre class="mermaid">pie title Programming Languages Used&#10;    &quot;JavaScript&quot; : 45&#10;    &quot;Python&quot; : 25&#10;    &quot;TypeScript&quot; : 15&#10;    &quot;Go&quot; : 10&#10;    &quot;Rust&quot; : 5&#10;</pre>
+<h2 id="how-to-use-mermaid-in-your-posts" tabindex="-1">How to Use Mermaid in Your Posts</h2>
+<p>To add a Mermaid diagram to your blog post, simply use a code block with <code>mermaid</code> as the language:</p>
+<pre><code>```mermaid
+graph LR
+    A[Start] --&gt; B[End]
+```
+</code></pre>
+<p>The diagram will be automatically rendered when the page loads!</p>
+<h2 id="tips-for-better-diagrams" tabindex="-1">Tips for Better Diagrams</h2>
+<ol>
+<li><strong>Keep it simple</strong> - Don't overcomplicate your diagrams</li>
+<li><strong>Use meaningful labels</strong> - Make node names descriptive</li>
+<li><strong>Add comments</strong> - Document complex diagrams</li>
+<li><strong>Test locally</strong> - Always preview before publishing</li>
+<li><strong>Check the docs</strong> - Visit <a href="https://mermaid.js.org/">Mermaid's documentation</a> for more examples</li>
+</ol>
+<h2 id="conclusion" tabindex="-1">Conclusion</h2>
+<p>Mermaid diagrams are a powerful way to visualize complex ideas, processes, and relationships. They're version-controllable, easy to edit, and render beautifully. Start using them in your blog posts today!</p>
+<h2 id="resources" tabindex="-1">Resources</h2>
+<ul>
+<li><a href="https://mermaid.js.org/">Mermaid Official Documentation</a></li>
+<li><a href="https://mermaid.live/">Mermaid Live Editor</a> - Test your diagrams online</li>
+<li><a href="https://mermaid.js.org/intro/">Mermaid Syntax Guide</a></li>
+</ul>
+
+    </div>
+
+    <footer class="blog-post__footer">
+        <a href="/blog" class="blog-post__back-link">
+            <i class="fas fa-arrow-left"></i> Back to Blog
+        </a>
+    </footer>
+</article>
+
+</main>
+        <footer class="base-footer">
+            <section class="container base-footer__container">
+                <small class="footnote">
+                    <span>&copy; 2026 - Developed by</span>
+                    <a href="https://github.com/cristianmayo" target="_blank">Cristian Mayo</a>
+                </small>
+                <nav class="base-nav__horizontal">
+    <ul class="base-nav__horizontal-menu">
+        <li class="base-nav__horizontal-menu-link">
+            <a href="/">Home</a>
+        </li>
+        <li class="divider">|</li>
+        <li class="base-nav__horizontal-menu-link">
+            <a href="/blog">Blog</a>
+        </li>
+        <li class="divider">|</li>
+        <li class="base-nav__horizontal-menu-link">
+            <a href="/repositories">Repositories</a>
+        </li>
+    </ul>
+</nav>
+
+
+            </section>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+        <script src="/assets/js/script.min.js" async></script>
+    </body>
+</html>

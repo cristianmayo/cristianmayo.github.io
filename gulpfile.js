@@ -6,8 +6,6 @@ var concat = require('gulp-concat');
 var cleanCSS = require('gulp-clean-css');
 var del = require('del');
 
-sass.compiler = require('node-sass');
-
 // Styles ---------------------------------------------------------
 var  styles = {
     src: 'src/assets/css/**/*.scss',

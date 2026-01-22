@@ -5,7 +5,7 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html lang="en">
     <head>
-        <title>GitHub Repositories</title>
+        <title>Getting Started with Eleventy</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="Cristian Mayo's GitHub Page which contains github projects and repositories along with relative details and activities">
@@ -55,64 +55,84 @@
             </div>
         </header>
         <main class="base-content">
-<div class="container repositories-page">
-    <header class="repositories-page__header">
-        <h1>GitHub Repositories</h1>
-        <p>A collection of my public repositories from GitHub, automatically updated.</p>
+<article class="container blog-post">
+    <header class="blog-post__header">
+        <h1 class="blog-post__title">Getting Started with Eleventy</h1>
+        <div class="blog-post__meta">
+            <time class="blog-post__date" datetime="Sat Jan 20 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
+                Saturday, January 20, 2024
+            </time>
+            
+            <span class="blog-post__category">
+                <i class="fas fa-folder"></i> Web Development
+            </span>
+            
+        </div>
+        
+        <div class="blog-post__tags">
+            
+            
+            
+            
+            <span class="blog-post__tag">
+                <i class="fas fa-tag"></i> eleventy
+            </span>
+            
+            
+            
+            <span class="blog-post__tag">
+                <i class="fas fa-tag"></i> jamstack
+            </span>
+            
+            
+            
+            <span class="blog-post__tag">
+                <i class="fas fa-tag"></i> tutorial
+            </span>
+            
+            
+        </div>
+        
     </header>
     
-    
-        <section class="repository-ltf-cards">
-    <div class="repository-ltf-cards__container">
-    
-        <article class="ltf-card">
-            <header>
-                <i class="fa-brands fa-github fa-2x"></i>
-                <h3 class="ltf-card__title">cristianmayo.github.io</h3>
-            </header>
-            <p class="ltf-card__description">Static site generator for GitHub Profile using Eleventy (11ty), Nunjucks, FrontMatter, and Markdown.</p>
-            
-            <div class="ltf-card__stats">
-                
-                <span class="ltf-card__stat">
-                    <i class="fas fa-code"></i> SCSS
-                </span>
-                
-                
-                
-            </div>
-            
-            
-            <footer>
-                <a href="https://github.com/cristianmayo/cristianmayo.github.io" target="_blank">View Repository</a>
-                
-                <span class="divider"> | </span>
-                <a href="https://cristianmayo.github.io/" target="_blank">Homepage</a>
-                
-                
-            </footer>
-        </article>
-    
-        <article class="ltf-card">
-            <header>
-                <i class="fa-brands fa-github fa-2x"></i>
-                <h3 class="ltf-card__title">cristianmayo</h3>
-            </header>
-            <p class="ltf-card__description">No description provided</p>
-            
-            
-            <footer>
-                <a href="https://github.com/cristianmayo/cristianmayo" target="_blank">View Repository</a>
-                
-                
-            </footer>
-        </article>
-    
-    </div>
-</section>
+    <div class="blog-post__content">
+        <h1 id="getting-started-with-eleventy" tabindex="-1">Getting Started with Eleventy</h1>
+<p>Eleventy is a simpler static site generator that's flexible and powerful. In this post, we'll explore why Eleventy is a great choice for your next project.</p>
+<h2 id="why-eleventy" tabindex="-1">Why Eleventy?</h2>
+<ol>
+<li><strong>Simple</strong> - No complex configuration required</li>
+<li><strong>Flexible</strong> - Use any template language</li>
+<li><strong>Fast</strong> - Builds are lightning quick</li>
+<li><strong>Zero Config</strong> - Works out of the box</li>
+</ol>
+<h2 id="installation" tabindex="-1">Installation</h2>
+<p>Getting started is easy:</p>
+<pre class="bash">npm install @11ty/eleventy
+</a>
+<h2 id="your-first-template" tabindex="-1">Your First Template</h2>
+<p>Create an <code>index.njk</code> file:</p>
+<pre class="nunjucks">---
+title: Home Page
+---
 
-    
-</div>
+<h1>Getting Started with Eleventy</h1>
+<p>Welcome to my site!</p>
+</a>
+<h2 id="running-eleventy" tabindex="-1">Running Eleventy</h2>
+<p>Start the development server:</p>
+<pre class="bash">npx eleventy --serve
+</a>
+<p>That's it! Your site is now running at <code>localhost:8080</code>.</p>
+
+    </div>
+
+    <footer class="blog-post__footer">
+        <a href="/blog" class="blog-post__back-link">
+            <i class="fas fa-arrow-left"></i> Back to Blog
+        </a>
+    </footer>
+</article>
+
 </main>
         <footer class="base-footer">
             <section class="container base-footer__container">
