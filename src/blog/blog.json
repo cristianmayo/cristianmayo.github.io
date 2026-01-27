@@ -2,9 +2,10 @@
     "layout": "blog-post.njk",
     "tags": "posts",
     "eleventyComputed": {
-        "permalink": "/blog/{{ page.date | ymdDateFormat }}/{{ page.fileSlug }}/index.html"
+        "permalink": "/blog/{{ page.date | ymdDateFormat }}/{{ title | slugify }}/index.html"
     }
 }
+
 
 
 
