@@ -11,6 +11,7 @@ A modern static site built with [Eleventy (11ty)](https://www.11ty.dev/), featur
 - ?? **Fast** - Static site generation for optimal performance
 - ?? **Auto-cleanup** - Automated build process cleans output directory
 
+
 ---
 
 ## **Get Started**
@@ -178,12 +179,15 @@ See the [Mermaid documentation](https://mermaid.js.org/) for syntax details.
 Posts are automatically published with the following URL pattern:
 
 ```
-/blog/YYYY/MM/DD/post-slug/
+/blog/YYYY/MM/DD/title-slug/
 ```
 
 **Example:**
 - File: `20240122_getting-started-with-eleventy.md`
-- URL: `/blog/2024/01/22/20240122_getting-started-with-eleventy/`
+- Title: `Getting Started with Eleventy`
+- URL: `/blog/2024/01/22/getting-started-with-eleventy/`
+
+**Note:** URLs are now generated from the post title (slugified) instead of the filename.
 
 ### Tips
 
@@ -194,6 +198,7 @@ Posts are automatically published with the following URL pattern:
 - ? **Test locally first** - Always preview before committing
 - ? **Keep images in** `/src/assets/img/` - Reference with `/assets/img/filename.jpg`
 - ? **Use Mermaid diagrams** - See [Mermaid Guide](MERMAID_GUIDE.md) for syntax examples
+
 
 ### Using Mermaid Diagrams
 
@@ -223,10 +228,10 @@ graph TD
 
 ?? **Theme:** Mermaid diagrams are automatically styled to match the site's dark theme with orange accents.
 
+
 ---
 
 ## **Project Structure**
-
 
 ```
 cristianmayo.github.io/
@@ -253,6 +258,7 @@ cristianmayo.github.io/
 ??? gulpfile.js             # Gulp tasks for SCSS
 ??? package.json            # Dependencies and scripts
 ```
+
 
 ---
 
