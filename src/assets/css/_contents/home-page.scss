@@ -3,11 +3,12 @@
     &__layout {
         display: grid;
         grid-template-columns: 1fr;
-        gap: var(--default-spacing);
+        column-gap: var(--default-spacing);
+        row-gap: var(--three-spacing);
         margin-top: var(--default-spacing);
 
         @media (min-width: 768px) {
-            gap: var(--two-spacing);
+            row-gap: var(--five-spacing);
             margin-top: var(--two-spacing);
         }
 
@@ -36,17 +37,19 @@
 .section-header {
     display: flex;
     justify-content: space-between;
+    align-content: center;
     align-items: center;
     margin-bottom: var(--two-spacing);
     padding-bottom: var(--default-spacing);
     border-bottom: 2px solid var(--bg-slategray);
 
-    h2 {
+    h6 {
         margin: 0;
-        font-size: var(--text-size-lg);
+        font-size: var(--text-size-sm);
         font-weight: 600;
         font-family: var(--font-title);
         color: var(--text-primary);
+        text-transform: uppercase !important;
     }
 
     &__link {
@@ -131,7 +134,7 @@
         time, span {
             display: flex;
             align-items: center;
-            gap: 0.25rem;
+            gap: 0.5rem;
         }
     }
 
@@ -254,7 +257,7 @@
     &__date {
         display: flex;
         align-items: center;
-        gap: 0.25rem;
+        gap: 0.5rem;
         font-size: var(--text-size-sm);
         color: var(--text-light);
     }
@@ -336,6 +339,7 @@
         font-size: var(--text-size-normal);
         font-weight: 600;
         font-family: var(--font-title);
+        text-transform: lowercase;
 
         a {
             color: var(--text-primary);

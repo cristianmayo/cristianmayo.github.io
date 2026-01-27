@@ -8,8 +8,8 @@ layout: _base.njk
         <!-- Main Column: Recent Blog Posts (3/4 width) -->
         <section class="home-page__main">
             <header class="section-header">
-                <h2>Recent Blog Posts</h2>
-                <a href="/blog" class="section-header__link">View All <i class="fas fa-arrow-right"></i></a>
+                <h6>Recent Blog Posts</h6>
+                <a href="/blog" class="section-header__link"><h6>View All <i class="fas fa-arrow-right"></i></h6></a>
             </header>
 
             {% set recentPosts = collections.blogPosts | take(4) %}
@@ -94,8 +94,8 @@ layout: _base.njk
         <!-- Sidebar Column: Recent Repositories (1/4 width) -->
         <aside class="home-page__sidebar">
             <header class="section-header">
-                <h2>Recent Repositories</h2>
-                <a href="/repositories" class="section-header__link">View All <i class="fas fa-arrow-right"></i></a>
+                <h6>Recent Repositories</h6>
+                <a href="/repositories" class="section-header__link"><h6>View All <i class="fas fa-arrow-right"></i></h6></a>
             </header>
 
             {% set recentRepos = githubRepositories | take(5) %}
