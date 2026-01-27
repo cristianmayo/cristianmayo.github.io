@@ -5,7 +5,7 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html lang="en">
     <head>
-        <title>Getting Started with Eleventy</title>
+        <title>Understanding Frontmatter in Static Sites</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="Cristian Mayo's GitHub Page which contains github projects and repositories along with relative details and activities">
@@ -58,10 +58,10 @@
 <div class="container blog-post-container">
 <article class="blog-post">
     <header class="blog-post__header">
-        <h1 class="blog-post__title">Getting Started with Eleventy</h1>
+        <h1 class="blog-post__title">Understanding Frontmatter in Static Sites</h1>
         <div class="blog-post__meta">
-            <time class="blog-post__date" datetime="Sat Jan 20 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
-                Saturday, January 20, 2024
+            <time class="blog-post__date" datetime="Thu Jan 25 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
+                Thursday, January 25, 2024
             </time>
             
             <span class="blog-post__category">
@@ -80,40 +80,42 @@
             </button>
             <div class="mobile-toc__content" id="mobile-toc-content">
                 <nav class="toc" >
-        <ul><li><a href="#getting-started-with-eleventy">Getting Started with Eleventy</a><ul><li><a href="#why-eleventy">Why Eleventy?</a></li><li><a href="#installation">Installation</a></li></ul></li><li><a href="#your-first-template">Your First Template</a></li><li><a href="#running-eleventy">Running Eleventy</a></li></ul>
+        <ul><li><a href="#understanding-frontmatter">Understanding Frontmatter</a><ul><li><a href="#basic-structure">Basic Structure</a></li></ul></li><li><a href="#common-fields">Common Fields</a><ul><li><a href="#title">Title</a></li><li><a href="#date">Date</a></li><li><a href="#category">Category</a></li><li><a href="#tags">Tags</a></li><li><a href="#excerpt">Excerpt</a></li></ul></li><li><a href="#advanced-usage">Advanced Usage</a></li></ul>
       </nav>
             </div>
         </div>
 
         
     <div class="blog-post__content">
-            <h1 id="getting-started-with-eleventy" tabindex="-1">Getting Started with Eleventy</h1>
-<p>Eleventy is a simpler static site generator that's flexible and powerful. In this post, we'll explore why Eleventy is a great choice for your next project.</p>
-<h2 id="why-eleventy" tabindex="-1">Why Eleventy?</h2>
-<ol>
-<li><strong>Simple</strong> - No complex configuration required</li>
-<li><strong>Flexible</strong> - Use any template language</li>
-<li><strong>Fast</strong> - Builds are lightning quick</li>
-<li><strong>Zero Config</strong> - Works out of the box</li>
-</ol>
-<h2 id="installation" tabindex="-1">Installation</h2>
-<p>Getting started is easy:</p>
-<pre class="bash">npm install @11ty/eleventy
-</a>
-<h2 id="your-first-template" tabindex="-1">Your First Template</h2>
-<p>Create an <code>index.njk</code> file:</p>
-<pre class="nunjucks">---
-title: Home Page
+            <h1 id="understanding-frontmatter" tabindex="-1">Understanding Frontmatter</h1>
+<p>Frontmatter is a powerful feature that allows you to add metadata to your markdown files. It's written in YAML and sits at the top of your file between triple dashes.</p>
+<h2 id="basic-structure" tabindex="-1">Basic Structure</h2>
+<pre class="yaml">---
+title: Your Title
+date: 2024-01-25
+tags: [tag1, tag2]
 ---
-
-<h1>Getting Started with Eleventy</h1>
-<p>Welcome to my site!</p>
 </a>
-<h2 id="running-eleventy" tabindex="-1">Running Eleventy</h2>
-<p>Start the development server:</p>
-<pre class="bash">npx eleventy --serve
+<h2 id="common-fields" tabindex="-1">Common Fields</h2>
+<h3 id="title" tabindex="-1">Title</h3>
+<p>The title of your post that appears in headings and metadata.</p>
+<h3 id="date" tabindex="-1">Date</h3>
+<p>The publication date, used for sorting and permalink generation.</p>
+<h3 id="category" tabindex="-1">Category</h3>
+<p>Group your posts by topic or subject matter.</p>
+<h3 id="tags" tabindex="-1">Tags</h3>
+<p>Add multiple tags to make content discoverable.</p>
+<h3 id="excerpt" tabindex="-1">Excerpt</h3>
+<p>A short description shown on listing pages.</p>
+<h2 id="advanced-usage" tabindex="-1">Advanced Usage</h2>
+<p>You can also add custom fields:</p>
+<pre class="yaml">---
+author: John Doe
+featured: true
+image: /img/post-image.jpg
+---
 </a>
-<p>That's it! Your site is now running at <code>localhost:8080</code>.</p>
+<p>These fields become available in your templates for conditional rendering and styling.</p>
 
         </div>
 
@@ -128,20 +130,22 @@ title: Home Page
                 
                 
                 
+                
+                
                 <a href="/blog" class="blog-post__tag-item">
-                    <i class="fas fa-tag"></i> eleventy
+                    <i class="fas fa-tag"></i> frontmatter
                 </a>
                 
                 
                 
                 <a href="/blog" class="blog-post__tag-item">
-                    <i class="fas fa-tag"></i> jamstack
+                    <i class="fas fa-tag"></i> markdown
                 </a>
                 
                 
                 
                 <a href="/blog" class="blog-post__tag-item">
-                    <i class="fas fa-tag"></i> tutorial
+                    <i class="fas fa-tag"></i> yaml
                 </a>
                 
                 
@@ -157,20 +161,20 @@ title: Home Page
                 
                 <div class="post-nav">
                     
-                    <a href="/blog/2024/01/15/20240115_my-first-blog-post/" class="post-nav__link post-nav__link--prev">
+                    <a href="/blog/2024/01/20/getting-started-with-eleventy/" class="post-nav__link post-nav__link--prev">
                         <span class="post-nav__label">
                             <i class="fas fa-chevron-left"></i> Previous Post
                         </span>
-                        <span class="post-nav__title">My First Blog Post</span>
+                        <span class="post-nav__title">Getting Started with Eleventy</span>
                     </a>
                     
                     
                     
-                    <a href="/blog/2024/01/25/20240125_understanding-frontmatter/" class="post-nav__link post-nav__link--next">
+                    <a href="/blog/2024/01/28/visualizing-ideas-with-mermaid-diagrams/" class="post-nav__link post-nav__link--next">
                         <span class="post-nav__label">
                             Next Post <i class="fas fa-chevron-right"></i>
                         </span>
-                        <span class="post-nav__title">Understanding Frontmatter in Static Sites</span>
+                        <span class="post-nav__title">Visualizing Ideas with Mermaid Diagrams</span>
                     </a>
                     
                 </div>
@@ -190,7 +194,7 @@ title: Home Page
             </h3>
             <div class="sidebar-section__content">
                 <nav class="toc" >
-        <ul><li><a href="#getting-started-with-eleventy">Getting Started with Eleventy</a><ul><li><a href="#why-eleventy">Why Eleventy?</a></li><li><a href="#installation">Installation</a></li></ul></li><li><a href="#your-first-template">Your First Template</a></li><li><a href="#running-eleventy">Running Eleventy</a></li></ul>
+        <ul><li><a href="#understanding-frontmatter">Understanding Frontmatter</a><ul><li><a href="#basic-structure">Basic Structure</a></li></ul></li><li><a href="#common-fields">Common Fields</a><ul><li><a href="#title">Title</a></li><li><a href="#date">Date</a></li><li><a href="#category">Category</a></li><li><a href="#tags">Tags</a></li><li><a href="#excerpt">Excerpt</a></li></ul></li><li><a href="#advanced-usage">Advanced Usage</a></li></ul>
       </nav>
             </div>
         </div>

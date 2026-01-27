@@ -5,7 +5,7 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html lang="en">
     <head>
-        <title>My First Blog Post</title>
+        <title>Getting Started with Eleventy</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="Cristian Mayo's GitHub Page which contains github projects and repositories along with relative details and activities">
@@ -58,14 +58,14 @@
 <div class="container blog-post-container">
 <article class="blog-post">
     <header class="blog-post__header">
-        <h1 class="blog-post__title">My First Blog Post</h1>
+        <h1 class="blog-post__title">Getting Started with Eleventy</h1>
         <div class="blog-post__meta">
-            <time class="blog-post__date" datetime="Mon Jan 15 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
-                Monday, January 15, 2024
+            <time class="blog-post__date" datetime="Sat Jan 20 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
+                Saturday, January 20, 2024
             </time>
             
             <span class="blog-post__category">
-                <i class="fas fa-folder"></i> Technology
+                <i class="fas fa-folder"></i> Web Development
             </span>
             
         </div>
@@ -80,37 +80,40 @@
             </button>
             <div class="mobile-toc__content" id="mobile-toc-content">
                 <nav class="toc" >
-        <ul><li><a href="#welcome-to-my-blog">Welcome to My Blog</a><ul><li><a href="#features">Features</a></li><li><a href="#getting-started">Getting Started</a><ul><li><a href="#example">Example</a></li></ul></li></ul></li><li><a href="#conclusion">Conclusion</a></li></ul>
+        <ul><li><a href="#getting-started-with-eleventy">Getting Started with Eleventy</a><ul><li><a href="#why-eleventy">Why Eleventy?</a></li><li><a href="#installation">Installation</a></li></ul></li><li><a href="#your-first-template">Your First Template</a></li><li><a href="#running-eleventy">Running Eleventy</a></li></ul>
       </nav>
             </div>
         </div>
 
         
     <div class="blog-post__content">
-            <h1 id="welcome-to-my-blog" tabindex="-1">Welcome to My Blog</h1>
-<p>This is my first blog post using Eleventy with a custom permalink structure. The filename format <code>YYYYMMDD_title-slug</code> allows us to organize posts chronologically while maintaining clean URLs.</p>
-<h2 id="features" tabindex="-1">Features</h2>
-<ul>
-<li>Custom permalink structure</li>
-<li>Frontmatter support</li>
-<li>Category and tag organization</li>
-<li>Excerpt support for listing pages</li>
-</ul>
-<h2 id="getting-started" tabindex="-1">Getting Started</h2>
-<p>To create a new blog post, simply create a markdown file with the date prefix and your desired slug. The build process will automatically generate the correct URL structure.</p>
-<h3 id="example" tabindex="-1">Example</h3>
-<pre class="markdown">---
-title: Your Post Title
-date: 2024-01-15
-category: Technology
-tags: [web, development]
-excerpt: A brief description
+            <h1 id="getting-started-with-eleventy" tabindex="-1">Getting Started with Eleventy</h1>
+<p>Eleventy is a simpler static site generator that's flexible and powerful. In this post, we'll explore why Eleventy is a great choice for your next project.</p>
+<h2 id="why-eleventy" tabindex="-1">Why Eleventy?</h2>
+<ol>
+<li><strong>Simple</strong> - No complex configuration required</li>
+<li><strong>Flexible</strong> - Use any template language</li>
+<li><strong>Fast</strong> - Builds are lightning quick</li>
+<li><strong>Zero Config</strong> - Works out of the box</li>
+</ol>
+<h2 id="installation" tabindex="-1">Installation</h2>
+<p>Getting started is easy:</p>
+<pre class="bash">npm install @11ty/eleventy
+</a>
+<h2 id="your-first-template" tabindex="-1">Your First Template</h2>
+<p>Create an <code>index.njk</code> file:</p>
+<pre class="nunjucks">---
+title: Home Page
 ---
 
-Your content here...
+<h1>Getting Started with Eleventy</h1>
+<p>Welcome to my site!</p>
 </a>
-<h2 id="conclusion" tabindex="-1">Conclusion</h2>
-<p>This blog system is flexible and easy to use. Happy blogging!</p>
+<h2 id="running-eleventy" tabindex="-1">Running Eleventy</h2>
+<p>Start the development server:</p>
+<pre class="bash">npx eleventy --serve
+</a>
+<p>That's it! Your site is now running at <code>localhost:8080</code>.</p>
 
         </div>
 
@@ -132,13 +135,13 @@ Your content here...
                 
                 
                 <a href="/blog" class="blog-post__tag-item">
-                    <i class="fas fa-tag"></i> javascript
+                    <i class="fas fa-tag"></i> jamstack
                 </a>
                 
                 
                 
                 <a href="/blog" class="blog-post__tag-item">
-                    <i class="fas fa-tag"></i> static-site
+                    <i class="fas fa-tag"></i> tutorial
                 </a>
                 
                 
@@ -154,15 +157,20 @@ Your content here...
                 
                 <div class="post-nav">
                     
-                    <div class="post-nav__link post-nav__link--disabled"></div>
+                    <a href="/blog/2024/01/15/my-first-blog-post/" class="post-nav__link post-nav__link--prev">
+                        <span class="post-nav__label">
+                            <i class="fas fa-chevron-left"></i> Previous Post
+                        </span>
+                        <span class="post-nav__title">My First Blog Post</span>
+                    </a>
                     
                     
                     
-                    <a href="/blog/2024/01/20/20240120_getting-started-with-eleventy/" class="post-nav__link post-nav__link--next">
+                    <a href="/blog/2024/01/25/understanding-frontmatter-in-static-sites/" class="post-nav__link post-nav__link--next">
                         <span class="post-nav__label">
                             Next Post <i class="fas fa-chevron-right"></i>
                         </span>
-                        <span class="post-nav__title">Getting Started with Eleventy</span>
+                        <span class="post-nav__title">Understanding Frontmatter in Static Sites</span>
                     </a>
                     
                 </div>
@@ -182,7 +190,7 @@ Your content here...
             </h3>
             <div class="sidebar-section__content">
                 <nav class="toc" >
-        <ul><li><a href="#welcome-to-my-blog">Welcome to My Blog</a><ul><li><a href="#features">Features</a></li><li><a href="#getting-started">Getting Started</a><ul><li><a href="#example">Example</a></li></ul></li></ul></li><li><a href="#conclusion">Conclusion</a></li></ul>
+        <ul><li><a href="#getting-started-with-eleventy">Getting Started with Eleventy</a><ul><li><a href="#why-eleventy">Why Eleventy?</a></li><li><a href="#installation">Installation</a></li></ul></li><li><a href="#your-first-template">Your First Template</a></li><li><a href="#running-eleventy">Running Eleventy</a></li></ul>
       </nav>
             </div>
         </div>
