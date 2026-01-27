@@ -2,9 +2,19 @@
 
     &__container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--two-spacing);
+        grid-template-columns: 1fr;
+        gap: var(--default-spacing);
         color: var(--text-light);
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--two-spacing);
+        }
+
+        @media (min-width: 1200px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
 
         .ltf-card {
             background-color: var(--bg-slategray);

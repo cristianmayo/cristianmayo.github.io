@@ -51,5 +51,39 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"></script>
         <script src="/assets/js/script.min.js" async></script>
+        <script>
+            // Mobile TOC Toggle
+            document.addEventListener('DOMContentLoaded', function() {
+                const tocToggle = document.querySelector('.mobile-toc__toggle');
+                if (tocToggle) {
+                    tocToggle.addEventListener('click', function() {
+                        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                        this.setAttribute('aria-expanded', !isExpanded);
+                    });
+                }
+
+                // Scroll to Top Button
+                const scrollToTopBtn = document.getElementById('scrollToTop');
+                if (scrollToTopBtn) {
+                    // Show/hide button based on scroll position
+                    window.addEventListener('scroll', function() {
+                        if (window.pageYOffset > 300) {
+                            scrollToTopBtn.classList.add('show');
+                        } else {
+                            scrollToTopBtn.classList.remove('show');
+                        }
+                    });
+
+                    // Scroll to top when clicked
+                    scrollToTopBtn.addEventListener('click', function() {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                }
+            });
+        </script>
     </body>
 </html>
+

@@ -5,6 +5,54 @@ nav, header, main, footer, section, article, .container {
     transition: width 500ms ease-in-out;
 }
 
+// Responsive container with consistent padding
+.container {
+    width: 100%;
+    padding-right: 0; // Base-content handles padding
+    padding-left: 0;  // Base-content handles padding
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (min-width: 768px) {
+        max-width: var(--container-md);
+    }
+
+    @media (min-width: 992px) {
+        max-width: var(--container-lg);
+    }
+
+    @media (min-width: 1200px) {
+        max-width: var(--container-xl);
+    }
+
+    @media (min-width: 1440px) {
+        max-width: var(--container-xxl);
+    }
+
+    @media (min-width: 2560px) {
+        max-width: var(--container-4k);
+    }
+}
+
+
+// Base content padding
+.base-content {
+    padding: 0 var(--container-padding-mobile); // 1rem sides on mobile
+    margin: var(--two-spacing) 0;
+
+    @media (min-width: 768px) {
+        padding: 0 var(--container-padding-tablet); // 1.5rem sides on tablet
+        margin: var(--three-spacing) 0;
+    }
+
+    @media (min-width: 992px) {
+        padding: 0 var(--container-padding-desktop); // 2rem sides on desktop
+    }
+}
+
+
+
+
 article, p {
     line-height: var(--text-lineheight);
 }

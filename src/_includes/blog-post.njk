@@ -3,22 +3,35 @@ layout: _base.njk
 ---
 
 <div class="container blog-post-container">
-    <article class="blog-post">
-        <header class="blog-post__header">
-            <h1 class="blog-post__title">{{ title }}</h1>
-            <div class="blog-post__meta">
-                <time class="blog-post__date" datetime="{{ date }}">
-                    {{ date | localeDate }}
-                </time>
-                {% if category %}
-                <span class="blog-post__category">
-                    <i class="fas fa-folder"></i> {{ category }}
-                </span>
-                {% endif %}
+<article class="blog-post">
+    <header class="blog-post__header">
+        <h1 class="blog-post__title">{{ title }}</h1>
+        <div class="blog-post__meta">
+            <time class="blog-post__date" datetime="{{ date }}">
+                {{ date | localeDate }}
+            </time>
+            {% if category %}
+            <span class="blog-post__category">
+                <i class="fas fa-folder"></i> {{ category }}
+            </span>
+            {% endif %}
+        </div>
+    </header>
+
+        <!-- Mobile TOC (Collapsible) -->
+        <div class="mobile-toc">
+            <button class="mobile-toc__toggle" aria-expanded="false" aria-controls="mobile-toc-content">
+                <i class="fas fa-list"></i>
+                <span class="mobile-toc__label">Table of Contents</span>
+                <i class="fas fa-chevron-down mobile-toc__icon"></i>
+            </button>
+            <div class="mobile-toc__content" id="mobile-toc-content">
+                {{ content | toc | safe }}
             </div>
-        </header>
+        </div>
+
         
-        <div class="blog-post__content">
+    <div class="blog-post__content">
             {{ content | safe }}
         </div>
 
@@ -87,6 +100,12 @@ layout: _base.njk
         </div>
     </aside>
 </div>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 
 
 

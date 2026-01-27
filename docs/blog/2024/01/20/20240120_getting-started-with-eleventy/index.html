@@ -56,22 +56,37 @@
         </header>
         <main class="base-content">
 <div class="container blog-post-container">
-    <article class="blog-post">
-        <header class="blog-post__header">
-            <h1 class="blog-post__title">Getting Started with Eleventy</h1>
-            <div class="blog-post__meta">
-                <time class="blog-post__date" datetime="Sat Jan 20 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
-                    Saturday, January 20, 2024
-                </time>
-                
-                <span class="blog-post__category">
-                    <i class="fas fa-folder"></i> Web Development
-                </span>
-                
+<article class="blog-post">
+    <header class="blog-post__header">
+        <h1 class="blog-post__title">Getting Started with Eleventy</h1>
+        <div class="blog-post__meta">
+            <time class="blog-post__date" datetime="Sat Jan 20 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
+                Saturday, January 20, 2024
+            </time>
+            
+            <span class="blog-post__category">
+                <i class="fas fa-folder"></i> Web Development
+            </span>
+            
+        </div>
+    </header>
+
+        <!-- Mobile TOC (Collapsible) -->
+        <div class="mobile-toc">
+            <button class="mobile-toc__toggle" aria-expanded="false" aria-controls="mobile-toc-content">
+                <i class="fas fa-list"></i>
+                <span class="mobile-toc__label">Table of Contents</span>
+                <i class="fas fa-chevron-down mobile-toc__icon"></i>
+            </button>
+            <div class="mobile-toc__content" id="mobile-toc-content">
+                <nav class="toc" >
+        <ul><li><a href="#getting-started-with-eleventy">Getting Started with Eleventy</a><ul><li><a href="#why-eleventy">Why Eleventy?</a></li><li><a href="#installation">Installation</a></li></ul></li><li><a href="#your-first-template">Your First Template</a></li><li><a href="#running-eleventy">Running Eleventy</a></li></ul>
+      </nav>
             </div>
-        </header>
+        </div>
+
         
-        <div class="blog-post__content">
+    <div class="blog-post__content">
             <h1 id="getting-started-with-eleventy" tabindex="-1">Getting Started with Eleventy</h1>
 <p>Eleventy is a simpler static site generator that's flexible and powerful. In this post, we'll explore why Eleventy is a great choice for your next project.</p>
 <h2 id="why-eleventy" tabindex="-1">Why Eleventy?</h2>
@@ -182,6 +197,12 @@ title: Home Page
     </aside>
 </div>
 
+<!-- Scroll to Top Button -->
+<button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+
 
 
 </main>
@@ -213,5 +234,39 @@ title: Home Page
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"></script>
         <script src="/assets/js/script.min.js" async></script>
+        <script>
+            // Mobile TOC Toggle
+            document.addEventListener('DOMContentLoaded', function() {
+                const tocToggle = document.querySelector('.mobile-toc__toggle');
+                if (tocToggle) {
+                    tocToggle.addEventListener('click', function() {
+                        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                        this.setAttribute('aria-expanded', !isExpanded);
+                    });
+                }
+
+                // Scroll to Top Button
+                const scrollToTopBtn = document.getElementById('scrollToTop');
+                if (scrollToTopBtn) {
+                    // Show/hide button based on scroll position
+                    window.addEventListener('scroll', function() {
+                        if (window.pageYOffset > 300) {
+                            scrollToTopBtn.classList.add('show');
+                        } else {
+                            scrollToTopBtn.classList.remove('show');
+                        }
+                    });
+
+                    // Scroll to top when clicked
+                    scrollToTopBtn.addEventListener('click', function() {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                }
+            });
+        </script>
     </body>
 </html>
+

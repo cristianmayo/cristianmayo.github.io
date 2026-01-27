@@ -7,18 +7,43 @@
     --bg-lightgray: #c0c0c0;
     --bg-light: #dfdfdf;
 
+    // Responsive breakpoints
+    --breakpoint-xs: 320px;   // Small phones
+    --breakpoint-sm: 576px;   // Phones
+    --breakpoint-md: 768px;   // Tablets
+    --breakpoint-lg: 992px;   // Small laptops
+    --breakpoint-xl: 1200px;  // Laptops
+    --breakpoint-xxl: 1440px; // Desktops
+    --breakpoint-4k: 2560px;  // 4K displays
+
+    // Legacy device widths (keep for compatibility)
     --device-width-lg: 1440px;
     --device-width-md: 768px;
     --device-width-sm: 425px;
 
+    // Container max widths
+    --container-sm: 540px;
+    --container-md: 720px;
+    --container-lg: 960px;
+    --container-xl: 1140px;
+    --container-xxl: 1320px;
+    --container-4k: 2048px;
+
+    // Spacing system
     --half-spacing: 0.5rem;
     --default-spacing: 1rem;
     --two-spacing: 2rem;
     --three-spacing: 3rem;
     --five-spacing: 5rem;
 
+    // Responsive padding
+    --container-padding-mobile: 1rem;
+    --container-padding-tablet: 1.5rem;
+    --container-padding-desktop: 2rem;
+
     --text-lineheight: 1.75rem;
 
+    // Responsive typography
     --text-size-sm: 0.85rem;
     --text-size-normal: 1rem;
     --text-size-md: 1.2rem;
@@ -39,4 +64,28 @@
     --shadow-dark-bg: #0000002d;
     --shadow-dark-bottom: 0 2rem 3rem var(--shadow-dark-bg);
     --shadow-dark-top: 0 -2rem 3rem var(--shadow-dark-bg);
+
+    // Z-index layers
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-tooltip: 1070;
+}
+
+// Responsive font sizing for larger screens
+@media (min-width: 1440px) {
+    :root {
+        --text-size-xl: 2rem;
+        --text-size-lg: 1.75rem;
+    }
+}
+
+@media (min-width: 2560px) {
+    :root {
+        --text-size-xl: 2.5rem;
+        --text-size-lg: 2rem;
+        --text-size-md: 1.5rem;
+    }
 }

@@ -2,12 +2,17 @@
 .home-page {
     &__layout {
         display: grid;
-        grid-template-columns: 3fr 1fr;
-        gap: var(--two-spacing);
-        margin-top: var(--two-spacing);
+        grid-template-columns: 1fr;
+        gap: var(--default-spacing);
+        margin-top: var(--default-spacing);
 
-        @media (max-width: 992px) {
-            grid-template-columns: 1fr;
+        @media (min-width: 768px) {
+            gap: var(--two-spacing);
+            margin-top: var(--two-spacing);
+        }
+
+        @media (min-width: 992px) {
+            grid-template-columns: 3fr 1fr;
         }
     }
 
@@ -25,6 +30,7 @@
         padding: var(--default-spacing);
     }
 }
+
 
 // Section Header
 .section-header {
@@ -178,16 +184,18 @@
 // Blog Grid (3 columns)
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--two-spacing);
+    grid-template-columns: 1fr;
+    gap: var(--default-spacing);
 
-    @media (max-width: 1200px) {
+    @media (min-width: 768px) {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--two-spacing);
     }
 
-    @media (max-width: 768px) {
-        grid-template-columns: 1fr;
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
     }
+
 
     &__card {
         background-color: var(--bg-slategray);
