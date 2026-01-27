@@ -55,54 +55,24 @@
             </div>
         </header>
         <main class="base-content">
-<article class="container blog-post">
-    <header class="blog-post__header">
-        <h1 class="blog-post__title">Visualizing Ideas with Mermaid Diagrams</h1>
-        <div class="blog-post__meta">
-            <time class="blog-post__date" datetime="Sun Jan 28 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
-                Sunday, January 28, 2024
-            </time>
-            
-            <span class="blog-post__category">
-                <i class="fas fa-folder"></i> Tutorial
-            </span>
-            
-        </div>
+<div class="container blog-post-container">
+    <article class="blog-post">
+        <header class="blog-post__header">
+            <h1 class="blog-post__title">Visualizing Ideas with Mermaid Diagrams</h1>
+            <div class="blog-post__meta">
+                <time class="blog-post__date" datetime="Sun Jan 28 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
+                    Sunday, January 28, 2024
+                </time>
+                
+                <span class="blog-post__category">
+                    <i class="fas fa-folder"></i> Tutorial
+                </span>
+                
+            </div>
+        </header>
         
-        <div class="blog-post__tags">
-            
-            
-            
-            
-            <span class="blog-post__tag">
-                <i class="fas fa-tag"></i> mermaid
-            </span>
-            
-            
-            
-            <span class="blog-post__tag">
-                <i class="fas fa-tag"></i> diagrams
-            </span>
-            
-            
-            
-            <span class="blog-post__tag">
-                <i class="fas fa-tag"></i> visualization
-            </span>
-            
-            
-            
-            <span class="blog-post__tag">
-                <i class="fas fa-tag"></i> markdown
-            </span>
-            
-            
-        </div>
-        
-    </header>
-    
-    <div class="blog-post__content">
-        <h1 id="visualizing-ideas-with-mermaid-diagrams" tabindex="-1">Visualizing Ideas with Mermaid Diagrams</h1>
+        <div class="blog-post__content">
+            <h1 id="visualizing-ideas-with-mermaid-diagrams" tabindex="-1">Visualizing Ideas with Mermaid Diagrams</h1>
 <p>Mermaid is a powerful tool that lets you create diagrams and visualizations using simple text descriptions. This blog supports Mermaid natively, allowing you to include various types of diagrams directly in your markdown content.</p>
 <h2 id="what-is-mermaid" tabindex="-1">What is Mermaid?</h2>
 <p>Mermaid is a JavaScript-based diagramming and charting tool that renders Markdown-inspired text definitions to create and modify diagrams dynamically. It's perfect for:</p>
@@ -160,14 +130,88 @@ graph LR
 <li><a href="https://mermaid.js.org/intro/">Mermaid Syntax Guide</a></li>
 </ul>
 
-    </div>
+        </div>
 
-    <footer class="blog-post__footer">
-        <a href="/blog" class="blog-post__back-link">
-            <i class="fas fa-arrow-left"></i> Back to Blog
-        </a>
-    </footer>
-</article>
+        <!-- Tags Section (moved from sidebar) -->
+        
+        <div class="blog-post__tags-section">
+            <h3 class="blog-post__tags-title">
+                <i class="fas fa-tags"></i> Tags
+            </h3>
+            <div class="blog-post__tags-list">
+                
+                
+                
+                
+                <a href="/blog" class="blog-post__tag-item">
+                    <i class="fas fa-tag"></i> mermaid
+                </a>
+                
+                
+                
+                <a href="/blog" class="blog-post__tag-item">
+                    <i class="fas fa-tag"></i> diagrams
+                </a>
+                
+                
+                
+                <a href="/blog" class="blog-post__tag-item">
+                    <i class="fas fa-tag"></i> visualization
+                </a>
+                
+                
+                
+                <a href="/blog" class="blog-post__tag-item">
+                    <i class="fas fa-tag"></i> markdown
+                </a>
+                
+                
+            </div>
+        </div>
+        
+
+        <footer class="blog-post__footer">
+
+            <div class="blog-post__navigation">
+                
+                
+                
+                <div class="post-nav">
+                    
+                    <a href="/blog/2024/01/25/20240125_understanding-frontmatter/" class="post-nav__link post-nav__link--prev">
+                        <span class="post-nav__label">
+                            <i class="fas fa-chevron-left"></i> Previous Post
+                        </span>
+                        <span class="post-nav__title">Understanding Frontmatter in Static Sites</span>
+                    </a>
+                    
+                    
+                    
+                </div>
+            </div>
+
+            <a href="/blog" class="blog-post__back-link">
+                <i class="fas fa-arrow-left"></i> Back to Blog
+            </a>
+        </footer>
+    </article>
+
+    <aside class="blog-post__sidebar">
+        <!-- Table of Contents -->
+        <div class="sidebar-section sidebar-toc">
+            <h3 class="sidebar-section__title">
+                <i class="fas fa-list"></i> Table of Contents
+            </h3>
+            <div class="sidebar-section__content">
+                <nav class="toc" >
+        <ul><li><a href="#visualizing-ideas-with-mermaid-diagrams">Visualizing Ideas with Mermaid Diagrams</a><ul><li><a href="#what-is-mermaid">What is Mermaid?</a></li><li><a href="#flowchart-example">Flowchart Example</a></li><li><a href="#sequence-diagram">Sequence Diagram</a></li><li><a href="#gantt-chart">Gantt Chart</a></li><li><a href="#class-diagram">Class Diagram</a></li><li><a href="#state-diagram">State Diagram</a></li><li><a href="#entity-relationship-diagram">Entity Relationship Diagram</a></li><li><a href="#pie-chart">Pie Chart</a></li><li><a href="#how-to-use-mermaid-in-your-posts">How to Use Mermaid in Your Posts</a></li><li><a href="#tips-for-better-diagrams">Tips for Better Diagrams</a></li><li><a href="#conclusion">Conclusion</a></li><li><a href="#resources">Resources</a></li></ul></li></ul>
+      </nav>
+            </div>
+        </div>
+    </aside>
+</div>
+
+
 
 </main>
         <footer class="base-footer">

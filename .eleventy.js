@@ -63,6 +63,21 @@ config.setUseGitIgnore(true);
         });
     });
 
+    // Get next post in chronological order (newer)
+    config.addFilter("getNextPost", (collection, currentPost) => {
+        const posts = collection.filter(post => !post.data.draft);
+        const currentIndex = posts.findIndex(post => post.url === currentPost.url);
+        return currentIndex > 0 ? posts[currentIndex - 1] : null;
+    });
+
+    // Get previous post in chronological order (older)
+    config.addFilter("getPreviousPost", (collection, currentPost) => {
+        const posts = collection.filter(post => !post.data.draft);
+        const currentIndex = posts.findIndex(post => post.url === currentPost.url);
+        return currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null;
+    });
+
+
     config.addNunjucksFilter("sortedCollection", (collection) => collection.sort());
 
     //#endregion

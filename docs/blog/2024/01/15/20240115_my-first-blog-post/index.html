@@ -55,48 +55,24 @@
             </div>
         </header>
         <main class="base-content">
-<article class="container blog-post">
-    <header class="blog-post__header">
-        <h1 class="blog-post__title">My First Blog Post</h1>
-        <div class="blog-post__meta">
-            <time class="blog-post__date" datetime="Mon Jan 15 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
-                Monday, January 15, 2024
-            </time>
-            
-            <span class="blog-post__category">
-                <i class="fas fa-folder"></i> Technology
-            </span>
-            
-        </div>
+<div class="container blog-post-container">
+    <article class="blog-post">
+        <header class="blog-post__header">
+            <h1 class="blog-post__title">My First Blog Post</h1>
+            <div class="blog-post__meta">
+                <time class="blog-post__date" datetime="Mon Jan 15 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
+                    Monday, January 15, 2024
+                </time>
+                
+                <span class="blog-post__category">
+                    <i class="fas fa-folder"></i> Technology
+                </span>
+                
+            </div>
+        </header>
         
-        <div class="blog-post__tags">
-            
-            
-            
-            
-            <span class="blog-post__tag">
-                <i class="fas fa-tag"></i> eleventy
-            </span>
-            
-            
-            
-            <span class="blog-post__tag">
-                <i class="fas fa-tag"></i> javascript
-            </span>
-            
-            
-            
-            <span class="blog-post__tag">
-                <i class="fas fa-tag"></i> static-site
-            </span>
-            
-            
-        </div>
-        
-    </header>
-    
-    <div class="blog-post__content">
-        <h1 id="welcome-to-my-blog" tabindex="-1">Welcome to My Blog</h1>
+        <div class="blog-post__content">
+            <h1 id="welcome-to-my-blog" tabindex="-1">Welcome to My Blog</h1>
 <p>This is my first blog post using Eleventy with a custom permalink structure. The filename format <code>YYYYMMDD_title-slug</code> allows us to organize posts chronologically while maintaining clean URLs.</p>
 <h2 id="features" tabindex="-1">Features</h2>
 <ul>
@@ -121,14 +97,84 @@ Your content here...
 <h2 id="conclusion" tabindex="-1">Conclusion</h2>
 <p>This blog system is flexible and easy to use. Happy blogging!</p>
 
-    </div>
+        </div>
 
-    <footer class="blog-post__footer">
-        <a href="/blog" class="blog-post__back-link">
-            <i class="fas fa-arrow-left"></i> Back to Blog
-        </a>
-    </footer>
-</article>
+        <!-- Tags Section (moved from sidebar) -->
+        
+        <div class="blog-post__tags-section">
+            <h3 class="blog-post__tags-title">
+                <i class="fas fa-tags"></i> Tags
+            </h3>
+            <div class="blog-post__tags-list">
+                
+                
+                
+                
+                <a href="/blog" class="blog-post__tag-item">
+                    <i class="fas fa-tag"></i> eleventy
+                </a>
+                
+                
+                
+                <a href="/blog" class="blog-post__tag-item">
+                    <i class="fas fa-tag"></i> javascript
+                </a>
+                
+                
+                
+                <a href="/blog" class="blog-post__tag-item">
+                    <i class="fas fa-tag"></i> static-site
+                </a>
+                
+                
+            </div>
+        </div>
+        
+
+        <footer class="blog-post__footer">
+
+            <div class="blog-post__navigation">
+                
+                
+                
+                <div class="post-nav">
+                    
+                    <div class="post-nav__link post-nav__link--disabled"></div>
+                    
+                    
+                    
+                    <a href="/blog/2024/01/20/20240120_getting-started-with-eleventy/" class="post-nav__link post-nav__link--next">
+                        <span class="post-nav__label">
+                            Next Post <i class="fas fa-chevron-right"></i>
+                        </span>
+                        <span class="post-nav__title">Getting Started with Eleventy</span>
+                    </a>
+                    
+                </div>
+            </div>
+
+            <a href="/blog" class="blog-post__back-link">
+                <i class="fas fa-arrow-left"></i> Back to Blog
+            </a>
+        </footer>
+    </article>
+
+    <aside class="blog-post__sidebar">
+        <!-- Table of Contents -->
+        <div class="sidebar-section sidebar-toc">
+            <h3 class="sidebar-section__title">
+                <i class="fas fa-list"></i> Table of Contents
+            </h3>
+            <div class="sidebar-section__content">
+                <nav class="toc" >
+        <ul><li><a href="#welcome-to-my-blog">Welcome to My Blog</a><ul><li><a href="#features">Features</a></li><li><a href="#getting-started">Getting Started</a><ul><li><a href="#example">Example</a></li></ul></li></ul></li><li><a href="#conclusion">Conclusion</a></li></ul>
+      </nav>
+            </div>
+        </div>
+    </aside>
+</div>
+
+
 
 </main>
         <footer class="base-footer">

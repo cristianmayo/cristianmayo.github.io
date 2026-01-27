@@ -55,50 +55,24 @@
             </div>
         </header>
         <main class="base-content">
-<article class="container blog-post">
-    <header class="blog-post__header">
-        <h1 class="blog-post__title">Understanding Frontmatter in Static Sites</h1>
-        <div class="blog-post__meta">
-            <time class="blog-post__date" datetime="Thu Jan 25 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
-                Thursday, January 25, 2024
-            </time>
-            
-            <span class="blog-post__category">
-                <i class="fas fa-folder"></i> Web Development
-            </span>
-            
-        </div>
+<div class="container blog-post-container">
+    <article class="blog-post">
+        <header class="blog-post__header">
+            <h1 class="blog-post__title">Understanding Frontmatter in Static Sites</h1>
+            <div class="blog-post__meta">
+                <time class="blog-post__date" datetime="Thu Jan 25 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
+                    Thursday, January 25, 2024
+                </time>
+                
+                <span class="blog-post__category">
+                    <i class="fas fa-folder"></i> Web Development
+                </span>
+                
+            </div>
+        </header>
         
-        <div class="blog-post__tags">
-            
-            
-            
-            
-            
-            
-            <span class="blog-post__tag">
-                <i class="fas fa-tag"></i> frontmatter
-            </span>
-            
-            
-            
-            <span class="blog-post__tag">
-                <i class="fas fa-tag"></i> markdown
-            </span>
-            
-            
-            
-            <span class="blog-post__tag">
-                <i class="fas fa-tag"></i> yaml
-            </span>
-            
-            
-        </div>
-        
-    </header>
-    
-    <div class="blog-post__content">
-        <h1 id="understanding-frontmatter" tabindex="-1">Understanding Frontmatter</h1>
+        <div class="blog-post__content">
+            <h1 id="understanding-frontmatter" tabindex="-1">Understanding Frontmatter</h1>
 <p>Frontmatter is a powerful feature that allows you to add metadata to your markdown files. It's written in YAML and sits at the top of your file between triple dashes.</p>
 <h2 id="basic-structure" tabindex="-1">Basic Structure</h2>
 <pre class="yaml">---
@@ -128,14 +102,91 @@ image: /img/post-image.jpg
 </a>
 <p>These fields become available in your templates for conditional rendering and styling.</p>
 
-    </div>
+        </div>
 
-    <footer class="blog-post__footer">
-        <a href="/blog" class="blog-post__back-link">
-            <i class="fas fa-arrow-left"></i> Back to Blog
-        </a>
-    </footer>
-</article>
+        <!-- Tags Section (moved from sidebar) -->
+        
+        <div class="blog-post__tags-section">
+            <h3 class="blog-post__tags-title">
+                <i class="fas fa-tags"></i> Tags
+            </h3>
+            <div class="blog-post__tags-list">
+                
+                
+                
+                
+                
+                
+                <a href="/blog" class="blog-post__tag-item">
+                    <i class="fas fa-tag"></i> frontmatter
+                </a>
+                
+                
+                
+                <a href="/blog" class="blog-post__tag-item">
+                    <i class="fas fa-tag"></i> markdown
+                </a>
+                
+                
+                
+                <a href="/blog" class="blog-post__tag-item">
+                    <i class="fas fa-tag"></i> yaml
+                </a>
+                
+                
+            </div>
+        </div>
+        
+
+        <footer class="blog-post__footer">
+
+            <div class="blog-post__navigation">
+                
+                
+                
+                <div class="post-nav">
+                    
+                    <a href="/blog/2024/01/20/20240120_getting-started-with-eleventy/" class="post-nav__link post-nav__link--prev">
+                        <span class="post-nav__label">
+                            <i class="fas fa-chevron-left"></i> Previous Post
+                        </span>
+                        <span class="post-nav__title">Getting Started with Eleventy</span>
+                    </a>
+                    
+                    
+                    
+                    <a href="/blog/2024/01/28/20240128_visualizing-with-mermaid/" class="post-nav__link post-nav__link--next">
+                        <span class="post-nav__label">
+                            Next Post <i class="fas fa-chevron-right"></i>
+                        </span>
+                        <span class="post-nav__title">Visualizing Ideas with Mermaid Diagrams</span>
+                    </a>
+                    
+                </div>
+            </div>
+
+            <a href="/blog" class="blog-post__back-link">
+                <i class="fas fa-arrow-left"></i> Back to Blog
+            </a>
+        </footer>
+    </article>
+
+    <aside class="blog-post__sidebar">
+        <!-- Table of Contents -->
+        <div class="sidebar-section sidebar-toc">
+            <h3 class="sidebar-section__title">
+                <i class="fas fa-list"></i> Table of Contents
+            </h3>
+            <div class="sidebar-section__content">
+                <nav class="toc" >
+        <ul><li><a href="#understanding-frontmatter">Understanding Frontmatter</a><ul><li><a href="#basic-structure">Basic Structure</a></li></ul></li><li><a href="#common-fields">Common Fields</a><ul><li><a href="#title">Title</a></li><li><a href="#date">Date</a></li><li><a href="#category">Category</a></li><li><a href="#tags">Tags</a></li><li><a href="#excerpt">Excerpt</a></li></ul></li><li><a href="#advanced-usage">Advanced Usage</a></li></ul>
+      </nav>
+            </div>
+        </div>
+    </aside>
+</div>
+
+
 
 </main>
         <footer class="base-footer">

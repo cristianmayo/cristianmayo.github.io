@@ -2,40 +2,91 @@
 layout: _base.njk
 ---
 
-<article class="container blog-post">
-    <header class="blog-post__header">
-        <h1 class="blog-post__title">{{ title }}</h1>
-        <div class="blog-post__meta">
-            <time class="blog-post__date" datetime="{{ date }}">
-                {{ date | localeDate }}
-            </time>
-            {% if category %}
-            <span class="blog-post__category">
-                <i class="fas fa-folder"></i> {{ category }}
-            </span>
-            {% endif %}
+<div class="container blog-post-container">
+    <article class="blog-post">
+        <header class="blog-post__header">
+            <h1 class="blog-post__title">{{ title }}</h1>
+            <div class="blog-post__meta">
+                <time class="blog-post__date" datetime="{{ date }}">
+                    {{ date | localeDate }}
+                </time>
+                {% if category %}
+                <span class="blog-post__category">
+                    <i class="fas fa-folder"></i> {{ category }}
+                </span>
+                {% endif %}
+            </div>
+        </header>
+        
+        <div class="blog-post__content">
+            {{ content | safe }}
         </div>
+
+        <!-- Tags Section (moved from sidebar) -->
         {% if tags %}
-        <div class="blog-post__tags">
-            {% for tag in tags %}
-            {% if tag != "posts" %}
-            <span class="blog-post__tag">
-                <i class="fas fa-tag"></i> {{ tag }}
-            </span>
-            {% endif %}
-            {% endfor %}
+        <div class="blog-post__tags-section">
+            <h3 class="blog-post__tags-title">
+                <i class="fas fa-tags"></i> Tags
+            </h3>
+            <div class="blog-post__tags-list">
+                {% for tag in tags %}
+                {% if tag != "posts" %}
+                <a href="/blog" class="blog-post__tag-item">
+                    <i class="fas fa-tag"></i> {{ tag }}
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
         </div>
         {% endif %}
-    </header>
-    
-    <div class="blog-post__content">
-        {{ content | safe }}
-    </div>
 
-    <footer class="blog-post__footer">
-        <a href="/blog" class="blog-post__back-link">
-            <i class="fas fa-arrow-left"></i> Back to Blog
-        </a>
-    </footer>
-</article>
+        <footer class="blog-post__footer">
+
+            <div class="blog-post__navigation">
+                {% set previousPost = collections.blogPosts | getPreviousPost(page) %}
+                {% set nextPost = collections.blogPosts | getNextPost(page) %}
+                
+                <div class="post-nav">
+                    {% if previousPost %}
+                    <a href="{{ previousPost.url }}" class="post-nav__link post-nav__link--prev">
+                        <span class="post-nav__label">
+                            <i class="fas fa-chevron-left"></i> Previous Post
+                        </span>
+                        <span class="post-nav__title">{{ previousPost.data.title }}</span>
+                    </a>
+                    {% else %}
+                    <div class="post-nav__link post-nav__link--disabled"></div>
+                    {% endif %}
+                    
+                    {% if nextPost %}
+                    <a href="{{ nextPost.url }}" class="post-nav__link post-nav__link--next">
+                        <span class="post-nav__label">
+                            Next Post <i class="fas fa-chevron-right"></i>
+                        </span>
+                        <span class="post-nav__title">{{ nextPost.data.title }}</span>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <a href="/blog" class="blog-post__back-link">
+                <i class="fas fa-arrow-left"></i> Back to Blog
+            </a>
+        </footer>
+    </article>
+
+    <aside class="blog-post__sidebar">
+        <!-- Table of Contents -->
+        <div class="sidebar-section sidebar-toc">
+            <h3 class="sidebar-section__title">
+                <i class="fas fa-list"></i> Table of Contents
+            </h3>
+            <div class="sidebar-section__content">
+                {{ content | toc | safe }}
+            </div>
+        </div>
+    </aside>
+</div>
+
+
 

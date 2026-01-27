@@ -55,48 +55,24 @@
             </div>
         </header>
         <main class="base-content">
-<article class="container blog-post">
-    <header class="blog-post__header">
-        <h1 class="blog-post__title">Getting Started with Eleventy</h1>
-        <div class="blog-post__meta">
-            <time class="blog-post__date" datetime="Sat Jan 20 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
-                Saturday, January 20, 2024
-            </time>
-            
-            <span class="blog-post__category">
-                <i class="fas fa-folder"></i> Web Development
-            </span>
-            
-        </div>
+<div class="container blog-post-container">
+    <article class="blog-post">
+        <header class="blog-post__header">
+            <h1 class="blog-post__title">Getting Started with Eleventy</h1>
+            <div class="blog-post__meta">
+                <time class="blog-post__date" datetime="Sat Jan 20 2024 08:00:00 GMT+0800 (Philippine Standard Time)">
+                    Saturday, January 20, 2024
+                </time>
+                
+                <span class="blog-post__category">
+                    <i class="fas fa-folder"></i> Web Development
+                </span>
+                
+            </div>
+        </header>
         
-        <div class="blog-post__tags">
-            
-            
-            
-            
-            <span class="blog-post__tag">
-                <i class="fas fa-tag"></i> eleventy
-            </span>
-            
-            
-            
-            <span class="blog-post__tag">
-                <i class="fas fa-tag"></i> jamstack
-            </span>
-            
-            
-            
-            <span class="blog-post__tag">
-                <i class="fas fa-tag"></i> tutorial
-            </span>
-            
-            
-        </div>
-        
-    </header>
-    
-    <div class="blog-post__content">
-        <h1 id="getting-started-with-eleventy" tabindex="-1">Getting Started with Eleventy</h1>
+        <div class="blog-post__content">
+            <h1 id="getting-started-with-eleventy" tabindex="-1">Getting Started with Eleventy</h1>
 <p>Eleventy is a simpler static site generator that's flexible and powerful. In this post, we'll explore why Eleventy is a great choice for your next project.</p>
 <h2 id="why-eleventy" tabindex="-1">Why Eleventy?</h2>
 <ol>
@@ -124,14 +100,89 @@ title: Home Page
 </a>
 <p>That's it! Your site is now running at <code>localhost:8080</code>.</p>
 
-    </div>
+        </div>
 
-    <footer class="blog-post__footer">
-        <a href="/blog" class="blog-post__back-link">
-            <i class="fas fa-arrow-left"></i> Back to Blog
-        </a>
-    </footer>
-</article>
+        <!-- Tags Section (moved from sidebar) -->
+        
+        <div class="blog-post__tags-section">
+            <h3 class="blog-post__tags-title">
+                <i class="fas fa-tags"></i> Tags
+            </h3>
+            <div class="blog-post__tags-list">
+                
+                
+                
+                
+                <a href="/blog" class="blog-post__tag-item">
+                    <i class="fas fa-tag"></i> eleventy
+                </a>
+                
+                
+                
+                <a href="/blog" class="blog-post__tag-item">
+                    <i class="fas fa-tag"></i> jamstack
+                </a>
+                
+                
+                
+                <a href="/blog" class="blog-post__tag-item">
+                    <i class="fas fa-tag"></i> tutorial
+                </a>
+                
+                
+            </div>
+        </div>
+        
+
+        <footer class="blog-post__footer">
+
+            <div class="blog-post__navigation">
+                
+                
+                
+                <div class="post-nav">
+                    
+                    <a href="/blog/2024/01/15/20240115_my-first-blog-post/" class="post-nav__link post-nav__link--prev">
+                        <span class="post-nav__label">
+                            <i class="fas fa-chevron-left"></i> Previous Post
+                        </span>
+                        <span class="post-nav__title">My First Blog Post</span>
+                    </a>
+                    
+                    
+                    
+                    <a href="/blog/2024/01/25/20240125_understanding-frontmatter/" class="post-nav__link post-nav__link--next">
+                        <span class="post-nav__label">
+                            Next Post <i class="fas fa-chevron-right"></i>
+                        </span>
+                        <span class="post-nav__title">Understanding Frontmatter in Static Sites</span>
+                    </a>
+                    
+                </div>
+            </div>
+
+            <a href="/blog" class="blog-post__back-link">
+                <i class="fas fa-arrow-left"></i> Back to Blog
+            </a>
+        </footer>
+    </article>
+
+    <aside class="blog-post__sidebar">
+        <!-- Table of Contents -->
+        <div class="sidebar-section sidebar-toc">
+            <h3 class="sidebar-section__title">
+                <i class="fas fa-list"></i> Table of Contents
+            </h3>
+            <div class="sidebar-section__content">
+                <nav class="toc" >
+        <ul><li><a href="#getting-started-with-eleventy">Getting Started with Eleventy</a><ul><li><a href="#why-eleventy">Why Eleventy?</a></li><li><a href="#installation">Installation</a></li></ul></li><li><a href="#your-first-template">Your First Template</a></li><li><a href="#running-eleventy">Running Eleventy</a></li></ul>
+      </nav>
+            </div>
+        </div>
+    </aside>
+</div>
+
+
 
 </main>
         <footer class="base-footer">
